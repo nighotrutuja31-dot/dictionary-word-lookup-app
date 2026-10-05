@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A modern Dictionary and Word Lookup App using the Free Dictionary API."
+    >
+
+    <title>LexiFind - Dictionary App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-shell">
+
+        <!-- ================= HEADER ================= -->
+        <header class="hero">
+
+            <nav class="navbar">
+
+                <a href="#" class="brand">
+
+                    <span class="brand-mark">L</span>
+
+                    <span>
+                        Lexi<span>Find</span>
+                    </span>
+
+                </a>
+
+                <span class="api-badge">
+                    <span class="dot"></span>
+                    Free Dictionary API
+                </span>
+
+            </nav>
+
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WORD EXPLORER
+                </p>
+
+                <h1>
+                    Find the meaning
+                    <br>
+                    <em>behind every word.</em>
+                </h1>
+
+                <p class="hero-copy">
+                    Definitions, phonetics, examples and pronunciation —
+                    all in one clean place.
+                </p>
+
+
+                <!-- Search Form -->
+                <form
+                    id="searchForm"
+                    class="search-box"
+                    autocomplete="off"
+                >
+
+                    <span
+                        class="search-icon"
+                        aria-hidden="true"
+                    >
+                        ⌕
+                    </span>
+
+                    <input
+                        id="wordInput"
+                        type="search"
+                        placeholder="Search a word, e.g. serendipity"
+                        aria-label="Search word"
+                    >
+
+                    <button type="submit">
+                        Search
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- Quick Search -->
+                <div class="quick-searches">
+
+                    <span>Try:</span>
+
+                    <button
+                        type="button"
+                        data-word="serendipity"
+                    >
+                        serendipity
+                    </button>
+
+                    <button
+                        type="button"
+                        data-word="resilient"
+                    >
+                        resilient
+                    </button>
+
+                    <button
+                        type="button"
+                        data-word="eloquent"
+                    >
+                        eloquent
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main-content">
+
+            <!-- Status Message -->
+            <section
+                id="status"
+                class="status hidden"
+                aria-live="polite"
+            ></section>
+
+
+            <!-- Empty State -->
+            <section
+                id="emptyState"
+                class="empty-state"
+            >
+
+                <div class="empty-icon">
+                    Aa
+                </div>
+
+                <h2>
+                    Your dictionary is ready.
+                </h2>
+
+                <p>
+                    Search for any English word to explore
+                    its meanings, pronunciation and examples.
+                </p>
+
+            </section>
+
+
+            <!-- ================= RESULT ================= -->
+
+            <section
+                id="result"
+                class="result hidden"
+            >
+
+                <!-- Word Header -->
+                <div class="word-header">
+
+                    <div>
+
+                        <div class="word-title-row">
+
+                            <h2 id="wordTitle">
+                                —
+                            </h2>
+
+                            <button
+                                id="audioButton"
+                                class="audio-btn hidden"
+                                type="button"
+                                aria-label="Play pronunciation"
+                            >
+                                ▶
+                            </button>
+
+                        </div>
+
+                        <p
+                            id="phonetic"
+                            class="phonetic"
+                        >
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="word-meta">
+
+                        <span id="sourceLabel">
+                            Free Dictionary API
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Meanings -->
+                <div id="meaningsContainer"></div>
+
+
+                <!-- Extra Information -->
+                <div
+                    id="extraInfo"
+                    class="extra-grid"
+                ></div>
+
+            </section>
+
+
+            <!-- ================= HISTORY ================= -->
+
+            <section
+                id="historySection"
+                class="history-section hidden"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RECENT
+                        </p>
+
+                        <h3>
+                            Search history
+                        </h3>
+
+                    </div>
+
+                    <button
+                        id="clearHistory"
+                        class="text-btn"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="historyList"
+                    class="history-list"
+                ></div>
+
+            </section>
+
+        </main>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                Built with HTML5, CSS3, JavaScript & Fetch API
+            </p>
+
+            <a
+                href="https://dictionaryapi.dev/"
+                target="_blank"
+                rel="noopener"
+            >
+                Powered by Free Dictionary API ↗
+            </a>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
